@@ -187,6 +187,8 @@ class _RegisterState extends State<Register> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        toolbarHeight: 70,
+        //padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios, color: Colors.white),
           onPressed: () {
@@ -200,7 +202,8 @@ class _RegisterState extends State<Register> {
           child: Container(
             color: Color.fromARGB(255, 45, 64, 89),
             child: Padding(
-              padding: const EdgeInsets.all(36.0),
+              padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+              //padding: const EdgeInsets.all(36.0),
               child: Form(
                 key: _formKey,
                 child: Column(
@@ -208,10 +211,10 @@ class _RegisterState extends State<Register> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     SizedBox(
-                      height: 200,
+                      height: 100,
                       child: Image.asset("assets/Logo_Name.png", fit: BoxFit.contain)
                       ),
-                    SizedBox(height: 50),
+                    SizedBox(height: 40),
                     firstNameField,
                     SizedBox(height: 50),
                     lastNameField, 

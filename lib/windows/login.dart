@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/windows/home.dart';
+import 'package:my_app/windows/register.dart';
 //import 'package:flutter/rendering.dart';
 
 class Login extends StatefulWidget {
@@ -12,7 +14,7 @@ class Login extends StatefulWidget {
 
 class LoginState extends State<Login> {
 
-//email and password form validation
+//email and password form
 final _formKey = GlobalKey<FormState>();
 
 //text editing controller
@@ -85,7 +87,9 @@ final TextEditingController passwordController = new TextEditingController();
       child: MaterialButton(
         padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home()));
+        },
         child: Text("Sign In", 
         textAlign: TextAlign.center,
         style: TextStyle(fontSize: 20,
@@ -103,7 +107,7 @@ final TextEditingController passwordController = new TextEditingController();
           child: Container(
             color: Color.fromARGB(255, 45, 64, 89),
             child: Padding(
-              padding: const EdgeInsets.all(36.0),
+              padding: const EdgeInsets.all(30.0),
               child: Form(
                 key: _formKey,
                 child: Column(
@@ -114,7 +118,7 @@ final TextEditingController passwordController = new TextEditingController();
                       height: 200,
                       child: Image.asset("assets/Logo_Name.png", fit: BoxFit.contain)
                       ),
-                      SizedBox(height: 50),
+                    SizedBox(height: 10),
                     emailField,
                     SizedBox(height: 50),
                     passwordField, 
@@ -126,9 +130,12 @@ final TextEditingController passwordController = new TextEditingController();
                       children: <Widget>[
                         Text("Click here to ", style: TextStyle(color: Colors.white, fontSize: 15),),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(
+                              builder: (context) => Register()));
+                          },
                           child: Text("Sign Up", 
-                          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 15, color: Colors.white))
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.white))
                           )
                       ],
                     )
